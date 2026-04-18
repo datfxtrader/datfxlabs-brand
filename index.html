@@ -372,6 +372,13 @@ body{
 .footer-brand{display:flex;align-items:center;gap:12px;}
 .footer-copy{font-size:13px;color:var(--ash);}
 
+/* ── Responsive inline-grid replacements ────────────────────── */
+.logo-primary-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:48px;}
+.stream-anatomy-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
+.lockups-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;}
+.voice-principles-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:40px;}
+.applications-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+
 /* ── Print / PDF export ────────────────────────────────────── */
 @media print {
   :root { --sidebar: 0px; }
@@ -426,6 +433,20 @@ body{
   .hero-meta{flex-direction:column;}
   .hero-meta-divider{width:80%;height:1px;}
   .logo-demo-grid{grid-template-columns:1fr;}
+  .do-dont{grid-template-columns:1fr;}
+  .logo-primary-grid{grid-template-columns:1fr;}
+  .stream-anatomy-grid{grid-template-columns:1fr;}
+  .lockups-grid{grid-template-columns:1fr 1fr;}
+  .voice-principles-grid{grid-template-columns:repeat(2,1fr);}
+  .applications-grid{grid-template-columns:1fr 1fr;}
+}
+@media(max-width:480px){
+  .swatches,.swatches-accent{grid-template-columns:repeat(2,1fr);}
+  .agent-grid{grid-template-columns:repeat(2,1fr);}
+  .lockups-grid{grid-template-columns:1fr;}
+  .voice-principles-grid{grid-template-columns:1fr;}
+  .applications-grid{grid-template-columns:1fr;}
+  .math-grid{grid-template-columns:1fr;}
 }
 
 /* ── Mobile menu btn ─────────────────────────────────────────── */
@@ -628,7 +649,7 @@ body{
   </div>
 
   <!-- Primary logo display -->
-  <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:48px;">
+  <div class="logo-primary-grid">
     <div class="logo-demo-cell reveal" style="background:var(--obs);border:1px solid var(--slate);border-radius:12px;flex-direction:column;gap:24px;">
       <svg width="120" height="120" viewBox="0 0 200 200" fill="none">
         <defs>
@@ -661,7 +682,7 @@ body{
 
   <!-- Stream anatomy -->
   <div class="sec-label reveal" data-en="Stream Anatomy" data-vi="Cấu Trúc Luồng">Stream Anatomy</div>
-  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;" class="reveal">
+  <div class="stream-anatomy-grid reveal">
     <div style="padding:24px;background:rgba(0,212,255,0.04);border:1px solid rgba(0,212,255,0.2);border-radius:10px;">
       <div style="width:32px;height:4px;background:var(--cyan);border-radius:2px;margin-bottom:14px;"></div>
       <div style="font-size:14px;font-weight:700;color:var(--cloud);margin-bottom:4px;" data-en="Technical Stream" data-vi="Luồng Kỹ Thuật">Technical Stream</div>
@@ -727,7 +748,7 @@ body{
     <p class="chapter-desc" data-en="Different contexts call for different configurations. Use these approved lockups exactly — never create ad-hoc arrangements or alter proportions." data-vi="Bối cảnh khác nhau cần cấu hình khác nhau. Sử dụng chính xác các biến thể được phê duyệt — không tự tạo cấu hình mới hoặc thay đổi tỷ lệ.">Different contexts call for different configurations. Use these approved lockups exactly — never create ad-hoc arrangements or alter proportions.</p>
   </div>
 
-  <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:16px;">
+  <div class="lockups-grid">
     <!-- Horizontal -->
     <div style="padding:48px;background:var(--obs);border:1px solid var(--slate);border-radius:12px;display:flex;align-items:center;gap:16px;" class="reveal">
       <svg width="48" height="48" viewBox="0 0 200 200" fill="none"><defs><linearGradient id="lk1" x1="35" y1="195" x2="100" y2="76" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#00D4FF" stop-opacity=".15"/><stop offset="100%" stop-color="#00D4FF"/></linearGradient><linearGradient id="lk2" x1="100" y1="195" x2="100" y2="76" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#7C5CFC" stop-opacity=".15"/><stop offset="100%" stop-color="#7C5CFC"/></linearGradient><linearGradient id="lk3" x1="165" y1="195" x2="100" y2="76" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#00E676" stop-opacity=".15"/><stop offset="100%" stop-color="#00E676"/></linearGradient><radialGradient id="lkx"><stop offset="0%" stop-color="#fff" stop-opacity=".9"/><stop offset="30%" stop-color="#00D4FF" stop-opacity=".5"/><stop offset="100%" stop-color="#00D4FF" stop-opacity="0"/></radialGradient></defs><g opacity=".3"><path d="M35 195 C54.5 147 93.5 100 100 76" stroke="url(#lk1)" stroke-width="14" stroke-linecap="round"/><path d="M100 195 C100 147 100 100 100 76" stroke="url(#lk2)" stroke-width="14" stroke-linecap="round"/><path d="M165 195 C145.5 147 106.5 100 100 76" stroke="url(#lk3)" stroke-width="14" stroke-linecap="round"/></g><g><path d="M35 195 C54.5 147 93.5 100 100 76" stroke="url(#lk1)" stroke-width="3" stroke-linecap="round"/><path d="M100 195 C100 147 100 100 100 76" stroke="url(#lk2)" stroke-width="3" stroke-linecap="round"/><path d="M165 195 C145.5 147 106.5 100 100 76" stroke="url(#lk3)" stroke-width="3" stroke-linecap="round"/></g><circle cx="100" cy="76" r="16" fill="url(#lkx)"/><circle cx="100" cy="76" r="4" fill="white"/></svg>
@@ -945,7 +966,7 @@ body{
     <p class="chapter-desc" data-en="Charts, analysis cards, and data displays follow a consistent visual language. Every color in a chart has a semantic meaning — never decorative." data-vi="Biểu đồ, thẻ phân tích, và hiển thị dữ liệu tuân theo ngôn ngữ trực quan nhất quán. Mỗi màu trong biểu đồ có ý nghĩa ngữ nghĩa — không bao giờ trang trí.">Charts, analysis cards, and data displays follow a consistent visual language. Every color in a chart has a semantic meaning — never decorative.</p>
   </div>
 
-  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;" class="reveal">
+  <div class="applications-grid reveal">
     <div class="analysis-card">
       <div class="analysis-band"></div>
       <div class="analysis-body">
@@ -1099,7 +1120,7 @@ body{
   </div>
 
   <!-- Four pillars -->
-  <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:40px;" class="reveal">
+  <div class="voice-principles-grid reveal">
     <div style="padding:24px;background:rgba(0,212,255,0.04);border:1px solid rgba(0,212,255,0.15);border-radius:10px;text-align:center;">
       <div style="font-size:24px;margin-bottom:10px;">🎯</div>
       <div style="font-size:15px;font-weight:700;color:var(--cloud);margin-bottom:6px;" data-en="Precise" data-vi="Chính Xác">Precise</div>
@@ -1162,7 +1183,7 @@ body{
     <p class="chapter-desc" data-en="The brand system applies consistently across all product surfaces — web dashboard, mobile app, Telegram bot, PDF reports, business cards, and email signatures." data-vi="Hệ thống thương hiệu áp dụng nhất quán trên mọi bề mặt sản phẩm — bảng điều khiển web, ứng dụng di động, bot Telegram, báo cáo PDF, danh thiếp, và chữ ký email.">The brand system applies consistently across all product surfaces — web dashboard, mobile app, Telegram bot, PDF reports, business cards, and email signatures.</p>
   </div>
 
-  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;" class="reveal">
+  <div class="applications-grid reveal">
     <div style="background:var(--char);border:1px solid var(--slate);border-radius:10px;overflow:hidden;">
       <div style="height:2px;background:linear-gradient(90deg,var(--cyan),var(--violet),var(--green));"></div>
       <div style="padding:24px;">
