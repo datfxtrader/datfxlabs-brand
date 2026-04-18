@@ -2344,40 +2344,6 @@ body {
     <strong data-i18n data-en="Rule:" data-vi="Quy tắc:">Rule:</strong> <span data-i18n data-en="When in doubt about which lockup to use — prefer the horizontal lockup for most UI contexts, stacked for hero/splash, icon-only for constrained sizes below 80px width." data-vi="Khi không chắc nên dùng biến thể nào — ưu tiên ngang cho hầu hết ngữ cảnh UI, xếp chồng cho hero/splash, chỉ biểu tượng cho kích thước nhỏ dưới 80px.">When in doubt about which lockup to use — prefer the horizontal lockup for most UI contexts, stacked for hero/splash, icon-only for constrained sizes below 80px width.</span>
   </div>
 </section>
-</main>
-
-<script>
-// Sidebar active state on scroll
-const chapters = document.querySelectorAll('.chapter, .hero');
-const navLinks = document.querySelectorAll('.sidebar-nav a');
-
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      const id = entry.target.id;
-      navLinks.forEach(link => {
-        link.classList.toggle('active', link.getAttribute('href') === '#' + id);
-      });
-    }
-  });
-}, { threshold: 0.3, rootMargin: '-10% 0px -60% 0px' });
-
-chapters.forEach(ch => { if (ch.id) observer.observe(ch); });
-
-// Color swatch copy on click
-document.querySelectorAll('.color-swatch').forEach(swatch => {
-  swatch.addEventListener('click', function() {
-    const hex = this.dataset.hex;
-    if (hex && navigator.clipboard) {
-      navigator.clipboard.writeText(hex).then(() => {
-        const orig = this.querySelector('.swatch-copy');
-        if (orig) { orig.textContent = 'Copied!'; setTimeout(() => orig.textContent = 'Click to copy', 1400); }
-      });
-    }
-  });
-});
-</script>
-
 
 <!-- ============================================================
      CHAPTER 5: COLOR SYSTEM
@@ -4070,6 +4036,7 @@ document.querySelectorAll('.color-swatch').forEach(swatch => {
     </div>
   </div>
 </section>
+</main>
 
 <!-- ============================================================
      FOOTER
@@ -4109,6 +4076,42 @@ document.querySelectorAll('.color-swatch').forEach(swatch => {
 </style>
 
 <script>
+// ============================================================
+// SIDEBAR SCROLL SPY
+// ============================================================
+(function() {
+  var chapters = document.querySelectorAll('.chapter, .hero');
+  var navLinks = document.querySelectorAll('.sidebar-nav a');
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        var id = entry.target.id;
+        navLinks.forEach(function(link) {
+          link.classList.toggle('active', link.getAttribute('href') === '#' + id);
+        });
+      }
+    });
+  }, { threshold: 0.3, rootMargin: '-10% 0px -60% 0px' });
+  chapters.forEach(function(ch) { if (ch.id) observer.observe(ch); });
+})();
+
+// ============================================================
+// COLOR SWATCH COPY
+// ============================================================
+(function() {
+  document.querySelectorAll('.color-swatch').forEach(function(swatch) {
+    swatch.addEventListener('click', function() {
+      var hex = this.dataset.hex;
+      if (hex && navigator.clipboard) {
+        navigator.clipboard.writeText(hex).then(function() {
+          var orig = swatch.querySelector('.swatch-copy');
+          if (orig) { orig.textContent = 'Copied!'; setTimeout(function() { orig.textContent = 'Click to copy'; }, 1400); }
+        });
+      }
+    });
+  });
+})();
+
 // ============================================================
 // COLLAPSIBLE SIDEBAR
 // ============================================================
