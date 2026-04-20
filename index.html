@@ -449,21 +449,24 @@ body{
   .logo-demo-grid{grid-template-columns:1fr;}
   .do-dont{grid-template-columns:1fr;}
   .logo-primary-grid{grid-template-columns:1fr;}
-  .stream-anatomy-grid{grid-template-columns:1fr;}
+  .stream-anatomy-grid{grid-template-columns:1fr 1fr;}
   .lockups-grid{grid-template-columns:1fr 1fr;}
   .voice-principles-grid{grid-template-columns:repeat(2,1fr);}
-  .applications-grid{grid-template-columns:1fr 1fr;}
+  .applications-grid{grid-template-columns:1fr;}
   /* type scale rows: wrap wide specimens instead of overflowing */
   .type-row{flex-wrap:wrap;gap:4px;align-items:flex-start;}
   /* inline padding:48px cards — reduce on mobile */
   [style*="padding:48px"]{padding:28px 16px !important;}
   /* brand voice table horizontal scroll on narrow screens */
   .voice-table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch;}
+  /* analysis card inner rows — allow wrapping on narrow cards */
+  .analysis-body>div[style*="justify-content:space-between"]{flex-wrap:wrap;gap:6px;}
 }
 @media(max-width:480px){
   .swatches,.swatches-accent{grid-template-columns:repeat(2,1fr);}
   .agent-grid{grid-template-columns:repeat(2,1fr);}
   .lockups-grid{grid-template-columns:1fr;}
+  .stream-anatomy-grid{grid-template-columns:1fr;}
   .voice-principles-grid{grid-template-columns:1fr;}
   .applications-grid{grid-template-columns:1fr;}
   .math-grid{grid-template-columns:1fr;}
@@ -991,7 +994,7 @@ body{
         <div style="font-size:12px;color:var(--fog);line-height:1.6;margin-bottom:12px;">RSI divergence H4 + rejection at 2,362. DXY weakness supports.</div>
         <div style="display:flex;justify-content:space-between;font-family:var(--font-mono);font-size:11px;color:var(--ash);">
           <span>Conv: <strong style="color:var(--cyan)">8.2/10</strong></span>
-          <span>5 of 6 agents</span>
+          <span>Consensus: High</span>
         </div>
       </div>
     </div>
@@ -1012,7 +1015,7 @@ body{
         <div style="font-size:12px;color:var(--fog);line-height:1.6;margin-bottom:12px;">Rejection at 1.0870. Below 1.0840 opens 1.0790. Fed hawkish vs ECB.</div>
         <div style="display:flex;justify-content:space-between;font-family:var(--font-mono);font-size:11px;color:var(--ash);">
           <span>Conv: <strong style="color:var(--red)">6.4/10</strong></span>
-          <span>4 of 6 agents</span>
+          <span>Consensus: Moderate</span>
         </div>
       </div>
     </div>
@@ -1033,7 +1036,7 @@ body{
         <div style="font-size:12px;color:var(--fog);line-height:1.6;margin-bottom:12px;">Wedge resolution imminent. Above 82.80 → 85.20. Below 80.50 → 78.00.</div>
         <div style="display:flex;justify-content:space-between;font-family:var(--font-mono);font-size:11px;color:var(--ash);">
           <span>Conv: <strong style="color:var(--amber)">7.1/10</strong></span>
-          <span>3 of 6 agents</span>
+          <span>Consensus: Split</span>
         </div>
       </div>
     </div>
@@ -1259,7 +1262,7 @@ body{
     <div class="math-card">
       <div class="math-val">3</div>
       <div style="font-size:13px;font-weight:700;color:var(--cloud);margin-bottom:6px;" data-en="Three Streams · Three Domains" data-vi="Ba Luồng · Ba Lĩnh Vực">Three Streams · Three Domains</div>
-      <div class="math-label" data-en="Technical · Macro · Sentiment — the three primary analytical domains. Six total agents (3 × 2) converging into one decisive view. Six = F(6) − 2 = 6." data-vi="Kỹ Thuật · Vĩ Mô · Cảm Xúc — ba lĩnh vực phân tích chính. Sáu tác nhân (3 × 2) hội tụ thành một góc nhìn quyết đoán. Sáu = F(6) − 2 = 6.">Technical · Macro · Sentiment — the three primary analytical domains. Six total agents (3 × 2) converging into one decisive view. Six = F(6) − 2 = 6.</div>
+      <div class="math-label" data-en="Technical · Macro · Sentiment — the three primary analytical domains. Three streams, one convergence point. The number of the product's core analytical pillars." data-vi="Kỹ Thuật · Vĩ Mô · Cảm Xúc — ba lĩnh vực phân tích chính. Ba luồng, một điểm hội tụ. Con số của các trụ cột phân tích cốt lõi.">Technical · Macro · Sentiment — the three primary analytical domains. Three streams, one convergence point. The number of the product's core analytical pillars.</div>
     </div>
     <div class="math-card">
       <div class="math-val" style="font-size:28px;">3·5·8·13</div>
